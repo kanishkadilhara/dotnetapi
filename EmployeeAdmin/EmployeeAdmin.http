@@ -25,3 +25,14 @@ Content-Type: application/json
 
 ### Get a single employee by ID
 GET {{EmployeeAdmin_HostAddress}}/api/employees/3F2504E0-4F89-11D3-9A0C-0305E82C3301
+
+### Update an existing employee
+PUT {{EmployeeAdmin_HostAddress}}/api/employees/81E3D359-3084-4101-56E3-08DF2B435EEE
+Content-Type: application/json
+
+{
+  "names": "Kamal Updated",
+  "email": "kamal.new@gmail.com",
+  "phone": "0719998887",
+  "salary": 120000
+}

@@ -2,6 +2,7 @@ using EmployeeAdmin.Data;
 using EmployeeAdmin.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeAdmin.Controllers
 {
@@ -47,6 +48,26 @@ namespace EmployeeAdmin.Controllers
             _dbcontext.SaveChanges();
 
             return Ok(newEmployee);
+        }
+
+        [HttpPut]
+        [Route("{id:guid}")]
+        public IActionResult UpdateEmployee(Guid id,UpdateEmployeeDto updateEmployeeDto)
+        {
+            var existingEmployee = _dbcontext.Employees.Find(id);
+            if (existingEmployee == null)
+            {
+                return NotFound();
+            }
+
+            existingEmployee.Names=updateEmployeeDto.Names;
+            existingEmployee.Email=updateEmployeeDto.Email;
+            existingEmployee.Phone=updateEmployeeDto.Phone;
+            existingEmployee.Salary=updateEmployeeDto.Salary;
+
+            _dbcontext.SaveChanges();
+
+            return Ok(existingEmployee);
         }
     }
 }
