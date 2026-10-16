@@ -1,0 +1,24 @@
+@EmployeeAdmin_HostAddress = http://localhost:5296
+
+GET {{EmployeeAdmin_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###
+
+GET {{EmployeeAdmin_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+GET {{EmployeeAdmin_HostAddress}}/api/employees
+Accept: application/json
+
+### Add a new employee
+POST {{EmployeeAdmin_HostAddress}}/api/employees
+Content-Type: application/json
+
+{
+  "names": "Kamal Perera",
+  "email": "kamal@gmail.com",
+  "phone": "0771234567",
+  "salary": 85000
+}
