@@ -22,3 +22,6 @@ Content-Type: application/json
   "phone": "0773434567",
   "salary": 35000
 }
+
+### Get a single employee by ID
+GET {{EmployeeAdmin_HostAddress}}/api/employees/3F2504E0-4F89-11D3-9A0C-0305E82C3301

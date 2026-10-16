@@ -21,6 +21,16 @@ namespace EmployeeAdmin.Controllers
             var employees = _dbcontext.Employees.ToList();
             return Ok(employees);
         }
+        [HttpGet("{id:guid}")]
+        public IActionResult GetEmployee(Guid id)
+        {
+            var employee = _dbcontext.Employees.Find(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            return Ok(employee);
+        }
 
         [HttpPost]
         public IActionResult AddEmployee(AddemployeeDTO addemployeeDTO)
