@@ -17,8 +17,8 @@ POST {{EmployeeAdmin_HostAddress}}/api/employees
 Content-Type: application/json
 
 {
-  "names": "Kamal Perera",
-  "email": "kamal@gmail.com",
-  "phone": "0771234567",
-  "salary": 85000
+  "names": "dilhara",
+  "email": "dilhara@gmail.com",
+  "phone": "0773434567",
+  "salary": 35000
 }
